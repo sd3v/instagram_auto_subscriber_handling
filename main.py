@@ -27,6 +27,10 @@ from getpass import getpass
 #danach auf <div class="JRHhD">1</div> klicken
 # --> First Test : Get Subscriber REQUEST amount and display the amount in the terminal
 
+
+
+#/html/body/span/section/main/div/div/div[1]/div/div[1]/div[3]/div/div[1]/button
+
 def login(u,p,driver):
     driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
     var = checkVisibility(driver,'//*[@id="react-root"]/section/main/div/article/div/div[1]/div/form/div[2]/div/label/input')
@@ -78,20 +82,23 @@ def navigate(driver):
     button =checkVisibility(driver,"/html/body/span/section/main/div/div/div/div/div[1]/div[1]/div")
     button.click()
 
-    amount_of_likes = driver.find_elements_by_xpath('/html/body/span/section/main/div/div/div[1]/div/*')
+    amount_of_likes = driver.find_elements_by_xpath('/html/body/span/section/main/div/div/div[1]/div/*/div[3]/div/div[1]/button')
+
 
     counter=1
     for i in amount_of_likes:
-        print("Subscriber Requests : " + str(counter))
-        counter+=1    
+        i.click() 
 
+    driver.refresh()
+    refresh()
 
     
 
 
-def refresh(url):
+def refresh():
     #Refresh Insta Notif Site every n minutes
-    pass
+    time.sleep(1800)
+    navigate()
 
 
 
