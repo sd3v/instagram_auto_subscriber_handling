@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.firefox.options import Options
 import bs4 as BeautifulSoup
 import time
 from getpass import getpass
@@ -66,7 +67,14 @@ def main():
     username = input("Username: ")
     #could use getpass for psw (not showing the psw in the terminal)
     password = getpass("Passwort: ")
-    driver = webdriver.Firefox()
+    
+    
+    options = Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
+
+
+
     #Authentication Error
     if not login(username,password,driver) :
         print("AUTH ERROR!")
