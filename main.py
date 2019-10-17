@@ -8,6 +8,7 @@ from selenium.webdriver.firefox.options import Options
 import bs4 as BeautifulSoup
 import time
 from getpass import getpass
+import datetime
 #bs4&selenium import
 #https://www.instagram.com/accounts/login/?source=auth_switcher 
 
@@ -95,7 +96,9 @@ def navigate(driver):
 
     counter=1
     for i in amount_of_likes:
-        i.click() 
+        i.click()
+        now = datetime.datetime.now()
+        print("[" + str(now) + "] accepted a new User")
 
     driver.refresh()
     refresh()
