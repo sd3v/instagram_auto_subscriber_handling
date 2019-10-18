@@ -9,29 +9,7 @@ import bs4 as BeautifulSoup
 import time
 from getpass import getpass
 import datetime
-#bs4&selenium import
-#https://www.instagram.com/accounts/login/?source=auth_switcher 
 
-#target Link for Login
-
-#Click <div class="JRHhD">1</div>
-#--> it also contains the amount of ppl who want to subscribe
-#/html/body/span/section/main/div/div/div/div/div[1]/div[1]/div
-
-
-#First Login
-
-#username input xpath //*[@id="react-root"]/section/main/div/article/div/div[1]/div/form/div[2]/div/label/input
-#password input xpath //*[@id="react-root"]/section/main/div/article/div/div[1]/div/form/div[3]/div/label/input
-#Login Button not needed , just send Enter key after password was inserted
-
-#Navigate to -> https://www.instagram.com/accounts/activity/
-#danach auf <div class="JRHhD">1</div> klicken
-# --> First Test : Get Subscriber REQUEST amount and display the amount in the terminal
-
-
-
-#/html/body/span/section/main/div/div/div[1]/div/div[1]/div[3]/div/div[1]/button
 
 def login(u,p,driver):
     driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
@@ -63,10 +41,7 @@ def checkVisibility(driver,path):
 
 
 def main():
-    #TODO Main Function
-    
     username = input("Username: ")
-    #could use getpass for psw (not showing the psw in the terminal)
     password = getpass("Passwort: ")
     
     
@@ -108,7 +83,7 @@ def navigate(driver):
 
 def refresh():
     #Refresh Insta Notif Site every n minutes
-    time.sleep(1800)
+    time.sleep(300)
     navigate()
 
 
@@ -118,5 +93,4 @@ if __name__ == '__main__':
 
 #TODO Error Handling
    # --> Network Errors
-   # --> Login Fails
    # --> TimeOuts etc..
