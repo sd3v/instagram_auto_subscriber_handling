@@ -29,7 +29,6 @@ def login(u,p,driver):
         print(driver.current_url)
         return False
 
-
 def checkVisibility(driver,path):
     wait = WebDriverWait(driver, 10)
     try:
@@ -44,12 +43,9 @@ def main():
     username = input("Username: ")
     password = getpass("Passwort: ")
     
-    
     options = Options()
     options.headless = True
     driver = webdriver.Firefox(options=options)
-
-
 
     #Authentication Error
     if not login(username,password,driver) :
@@ -58,7 +54,6 @@ def main():
 
     navigate(driver)
 
-    
 
 
 def navigate(driver):
@@ -66,27 +61,17 @@ def navigate(driver):
     button =checkVisibility(driver,"/html/body/span/section/main/div/div/div/div/div[1]/div[1]/div")
     button.click()
 
+
     amount_of_likes = driver.find_elements_by_xpath('/html/body/span/section/main/div/div/div[1]/div/*/div[3]/div/div[1]/button')
-
-
     counter=1
     for i in amount_of_likes:
         i.click()
         now = datetime.datetime.now()
         print("[" + str(now) + "] accepted a new User")
-
+ 
     driver.refresh()
-    refresh()
-
-    
-
-
-def refresh():
-    #Refresh Insta Notif Site every n minutes
-    time.sleep(300)
-    navigate()
-
-
+    time.sleep(500)
+    navigate(driver)
 
 if __name__ == '__main__':
     main()
