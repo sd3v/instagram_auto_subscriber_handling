@@ -1,4 +1,4 @@
-# Instagram Automated Subscriber Handling
+# Instagram Automated Subscriber Handling [no API - August 2019]
 
 This Python Script accepts all incoming Subscriber Requests for every n-Minute Intervall.
 
