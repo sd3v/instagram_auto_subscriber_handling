@@ -4,10 +4,10 @@ This Python Script accepts all incoming Subscriber Requests for every n-Minute I
 
 ## Installation
 
-Use the package manager [pip3](https://help.dreamhost.com/hc/en-us/articles/115000699011-Using-pip3-to-install-Python3-modules) to install [selenium](https://www.seleniumhq.org/) and [bs4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+Use the package manager [pip3](https://help.dreamhost.com/hc/en-us/articles/115000699011-Using-pip3-to-install-Python3-modules) to install [selenium](https://www.seleniumhq.org/).
 
 ```bash
-pip3 install selenium bs4
+pip3 install selenium
 ```
 
 ## Usage
