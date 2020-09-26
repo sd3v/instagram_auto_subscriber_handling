@@ -1,4 +1,6 @@
-# Instagram Automated Subscriber Handling [no API - August 2019 - not Working right now]
+# Instagram Automated Subscriber Handling [not Working right now]
+
+The Script is not working due to Xpath Changes on Instagram.com , so you have to adjust the paths.
 
 This Python Script accepts all incoming Subscriber Requests for every n-Minute Intervall.
 
